@@ -1,0 +1,1 @@
+print(max([int(word[::-1]) for word in input().split(" ")]))
