@@ -1,19 +1,15 @@
-from sys import stdin
-
-stk1 = list(stdin.readline().split())
-stk2 = []
-n = int(input())
-for _ in range(n):
-    line = list(stdin.readline().split())
-    if line[0] == 'L':
-        if stk1:    stk2.append(stk1.pop())
-        else:   continue
-    elif line[0] == 'D':
-        if stk2:    stk1.append(stk2.pop())
-        else:   continue
-    elif line[0] == 'B':
-        if stk1:    stk1.pop()
-        else:   continue
-    elif line[0] == 'P':
-        stk1.append(line[1])
-print(''.join(stk1+list(reversed(stk2))))
+import sys
+left_stack = list(sys.stdin.readline()[:-1])
+right_stack = list()
+testcase = int(sys.stdin.readline())
+for _ in range(testcase):
+    cmd = sys.stdin.readline()
+    if cmd[0] == 'L' and left_stack:
+        right_stack.append(left_stack.pop())
+    elif cmd[0] == 'D' and right_stack:
+        left_stack.append(right_stack.pop())
+    elif cmd[0] == 'B' and left_stack:
+        left_stack.pop()
+    elif cmd[0] == 'P':
+        left_stack.append(cmd[2])
+sys.stdout.write(''.join(left_stack + right_stack[::-1]))
