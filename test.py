@@ -1,2 +1,5 @@
 import sys
-sys.path
+import datetime
+
+li = ['']*100
+print(li)
