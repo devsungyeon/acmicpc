@@ -17,6 +17,6 @@ while s < e:
     elif li[s] + li[e] > x:
         e -= 1
     elif li[s] + li[e] < x:
-        break
+        s += 1
 
 print(ans)
