@@ -1,8 +1,8 @@
-t = int(input())
-for i in range(t):
-    n, s = map(str, input().split())
-    n = int(n)
+for _ in range(int(input())):
+    r, s = map(str, input().split())
+    r = int(r)
     ans = ''
-    for j in range(len(s)):
-        ans += s[j]*n
+    for q in s:
+        ans += q*r
     print(ans)
+
