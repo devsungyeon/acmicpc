@@ -1,7 +1,8 @@
-li = {chr(i+65):i//3+2 for i in range(26)}
-li['S'] = 7
-li['V'] = 8
-li['Y'] = 9
-li['Z'] = 9
-
-print(sum([li[i]+1 for i in input()]))
+a = input()
+dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+ret = 0
+for j in range(len(a)):
+	for i in dial:
+		if a[j] in i:
+			ret += dial.index(i) + 3
+print(ret)
