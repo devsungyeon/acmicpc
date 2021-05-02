@@ -8,10 +8,11 @@ int main() {
 		char str[1000];
 		cnt++;
 		scanf("%s", str);
-		for(int j = 0; j < strlen(str); j++) {
+		arr[str[0]-97] = 1;
+		for(int j = 1; j < strlen(str); j++) {
 			if(arr[str[j]-97] == 1)
 			{
-				if (!(str[j] == str[j-1] || str[j] == str[j+1] ))
+				if (str[j] != str[j-1])
 				{
 					cnt--;
 					j = 100;
