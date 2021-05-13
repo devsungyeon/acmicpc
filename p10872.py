@@ -1,4 +1,6 @@
-def fact(n):
-    if n<=1: return 1
-    return n*fact(n-1)
+#!/usr/bin/python3
+def fact(a):
+    if a <= 1:
+        return 1
+    return a * fact(a-1)
 print(fact(int(input())))
