@@ -13,7 +13,7 @@ int main() {
 	}
 	sort(arr.begin(), arr.end());
 	for(int i=0; i<n;i++) {
-		cout << arr[i] << endl;
+		cout << arr[i] << '\n';
 	}
 	
 	return 0;
