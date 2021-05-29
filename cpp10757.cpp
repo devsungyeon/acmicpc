@@ -3,38 +3,23 @@
 using namespace std;
 
 int n, sum;
-int num1[10001], num2[10001];
+vector<int> num1, num2;
 string s1, s2, tmp;
 vector<int> ans;
 
 int main() {
-	cin >> s1 >> s2;
+	cin >> s1;
+	cin >> s2;
 
-	if(s1.size() < s2.size()) {
-		tmp = s1;
-		s1 = s2;
-		s2 = tmp;
-	}
+	for(char i : s1)
+		num1.push_back((int)(i-'0'));
 	
-	for(int i = 0 ; i < s1.size(); i++ ){
-		num1[i+1] = s1[i] - '0';
-	}
-	for(int i = 0 ; i < s2.size(); i++ ) {
-		num2[i+1+(s1.size()-s2.size())] = s2[i] - '0';
-	}
-
-	for(int i = s1.size();i>0; i++ ) {
-		sum = num1[i] + num2[i];
-		if(sum >= 10) {
-			num1[i-1]++;
-			sum -= 10;
-		}
-		ans.push_back(sum);
-	}
-	if(num1[0] != 0 ) cout << 1;
-
-	for(int i = ans.size() -1 ; i >= 0 ;i--) 
-		cout << ans[i];
+	for(char i : s2)
+		num2.push_back((int)(i-'0'));
+	reverse(num1.begin(), num2.end());
+	reverse(num2.begin(), num2.end());
+	
+		
 
 	return 0;
 }
