@@ -11,15 +11,22 @@ int main() {
 	cin >> s1;
 	cin >> s2;
 
-	for(char i : s1)
-		num1.push_back((int)(i-'0'));
-	
-	for(char i : s2)
-		num2.push_back((int)(i-'0'));
-	reverse(num1.begin(), num2.end());
-	reverse(num2.begin(), num2.end());
-	
-		
+	for(char i : s1){
+		if(i != '\n')
+			num1.push_back((int)(i-'0'));
+	}
+	for(char i : s2){
+		if(i != '\n')
+			num2.push_back((int)(i-'0'));
+	}
 
+	reverse(num1.begin(), num1.end());
+	reverse(num2.begin(), num2.end());
+
+	for(int i=0;i<max(num1.size(), num2.size());i++) {
+		ans.push_back(num1[i]+num2[i]);
+	}
+
+	
 	return 0;
 }
