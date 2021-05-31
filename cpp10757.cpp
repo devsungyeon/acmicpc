@@ -23,10 +23,6 @@ int main() {
 	reverse(num1.begin(), num1.end());
 	reverse(num2.begin(), num2.end());
 
-	for(int i=0;i<max(num1.size(), num2.size());i++) {
-		ans.push_back(num1[i]+num2[i]);
-	}
-
 	
 	return 0;
 }
