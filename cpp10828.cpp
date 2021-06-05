@@ -2,24 +2,49 @@
 
 using namespace std;
 
+vector<int> arr;
+
 int main() {
-	int k;
-	cin >> k;
+	int n;
+	cin >> n;
 	
-	vector<int> arr;
-	for(int i = 0 ; i < k ; i++ )
-	{
-		int temp;
-		cin >> temp;
-		if(temp == 0)
-			arr.pop_back();
-		else
-			arr.push_back(temp);
+	for(int i=0;i<n;i++) {
+		string s;
+		int x;
+		cin >> s;
+
+		if(s == "push") {
+			cin >> x;			
+		}
+		
+		if(s=="push")
+			arr.push_back(x);
+		else if(s=="pop")
+		{
+			if(arr.size() == 0)
+				cout << -1 << "\n";
+			else {
+				cout << arr.back() << "\n";
+				arr.pop_back();
+			}
+		}
+		else if(s=="size")
+			cout << arr.size() << "\n";
+		else if(s=="empty") {
+			if(arr.size() == 0)
+				cout << 1 << "\n";
+			else
+				cout << 0 << "\n";
+		}
+		else if(s=="top")
+		{
+			if(arr.size()==0)
+				cout << -1 << "\n";
+			else
+				cout << arr.back() << "\n";
+		}
+			
 	}
-	int ans=0;
-	for(auto i : arr)
-		ans += i;
-	cout << ans << endl;
 
 	return 0;
 }
