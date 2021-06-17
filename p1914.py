@@ -12,5 +12,5 @@ def hanoi(k, s, m, d):
 n = int(input())
 k = Tn(n)
 print(k)
-if k <= 20:
+if n <= 20:
     hanoi(n, 1, 2, 3)
